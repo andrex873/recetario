@@ -2,20 +2,22 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Modelo de Bebidas
-class Bebida(models.Model):
-	nombre = models.CharField(max_length=50)
-	ingredientes = models.TextField()
-	preparacion = models.TextField()
-	def __unicode__(self):
-		return self.nombre
-
+# Modelo de Receta
 class Receta(models.Model):
-    titulo = models.CharField(max_length=100, unique=True)
+    titulo = models.CharField(max_length=100, verbose_name='Título', unique=True)
     ingredientes = models.TextField(help_text='Redacta los ingredientes')
-    preparacion = models.TextField(verbose_name='Preparación')
+    preparacion = models.TextField(verbose_name='Preparación', help_text='Proceso de preparación')
     imagen = models.ImageField(upload_to='recetas', verbose_name='Imágen')
     tiempo_registro = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User)
+    
     def __unicode__(self):
         return self.titulo
+
+class Comentario(models.Model):
+    receta = models.ForeignKey(Receta)
+    texto = models.TextField(help_text='Tu comentario', verbose_name='Comentario')
+
+    def __unicode__(self):
+        return self.texto
+

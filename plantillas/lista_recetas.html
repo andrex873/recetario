@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de bebidas ejemplo</title>
+</head>
+<body>
+    <style>
+        img{
+            width: 100px;
+        }
+    </style>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/usuarios">Usuarios Registrados</a></li>
+            <li><a href="/recetas">Recetas</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+        </ul>
+    </nav>
+
+
+	<h1>Nuestras recetas: </h1>	
+	<ul>
+        {% for receta in listaRecetas %}
+		<li>
+            <a href="/receta/{{receta.id}}">{{receta.titulo}}</a> 
+            <img src="{{MEDIA_URL}}{{receta.imagen}}" alt="">
+        </li>		
+	   {% endfor %}
+    </ul>	
+</body>
+</html>
