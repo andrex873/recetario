@@ -1,4 +1,4 @@
-recetario
+Recetario
 =========
 
-Seguimiento de la guia de maestros del WEB
+Seguimiento de la guia de maestros del WEB - Djangos
