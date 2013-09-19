@@ -1,26 +1,30 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>Lista de bebidas ejemplo</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <nav>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/usuarios">Usuarios Registrados</a></li>
-            <li><a href="/recetas">Recetas</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-        </ul>
-    </nav>
+{% comment %} Este es un ejemplo de comentarios {% endcomment %}
 
+{% block titulo %} Inicio {% endblock %}
 
-	<h1>Recetario: </h1>	
-	<ul>
-        {% for receta in listaRecetas %}
-		<li><strong>{{receta.titulo}}</strong></li>		
-        {% endfor %}
-	</ul>	
-</body>
-</html>
+{% block style_css %}
+    .impar{ background-color: #90EE90; }
+    .par{background-color:#5ACC5A;}
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Recetario</h1>
+{% endblock %}
+
+{% block contenido %}
+<p>
+    Actualmente existen:
+    {% with total=listaRecetas.count %}
+        {{total}} receta{{total|pluralize}}
+    {% endwith %}
+</p>
+<ul>
+    {% for dato in listaRecetas %}
+    <li class="{% cycle 'impar' 'par' %}">{{dato.titulo}}</li>
+    {% empty %}
+    <li>No hay recetas para mostrar</li>
+    {% endfor %}
+</ul>
+{% endblock %}

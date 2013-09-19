@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <title>Recetario para incolsoft {% block titulo %}{% endblock %}</title>
+    <style type="text/css">
+    {% block style_css %}{% endblock %}
+    </style>
+</head>
+<body>
+    {% block encabezado %}{% endblock %}
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/usuarios">Usuarios registrados</a></li>
+            <li><a href="/recetas">Recetas</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <section class="contenido">
+        {% block contenido %}{% endblock %}
+    </section>
+    <footer>
+        <p>Ejemplo de plantillas Django 2013</p>
+    </footer>
+</body>
+</html>
