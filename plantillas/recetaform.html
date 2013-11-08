@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<form action="" id="frmReceta" method="post" enctype="multipart/form-data" >{% csrf_token %}
+    {{formulario.as_p}}
+    <input type="submit" value="Confirmar"></input>
+</form>
+{% endblock %}

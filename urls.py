@@ -13,4 +13,7 @@ urlpatterns = patterns('',
     url(r'^recetas/$', 'principal.views.lista_recetas'), 
     url(r'^receta/(?P<id_receta>\d+)$', 'principal.views.detalle_receta'), 
     url(r'^sobre/$', 'principal.views.sobre'), 
+    url(r'^contacto/$', 'principal.views.contacto'), 
+    url(r'^receta/nueva/$', 'principal.views.nueva_receta'), 
+    url(r'^comenta/$', 'principal.views.nuevo_comentario'), 
 )

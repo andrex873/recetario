@@ -154,3 +154,10 @@ LOGGING = {
         },
     }
 }
+
+# Configuracion personal para el envio de correo electronico
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'un_correo_aca@dominio.com'
+EMAIL_HOST_PASSWORD = 'una_clave_de_correo'
+EMAIL_PORT = 587

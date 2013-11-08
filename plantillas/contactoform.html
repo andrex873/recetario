@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<form action="" id="frmContacto" method="post">{% csrf_token %}
+    {{formulario.as_p}}
+    <input type="submit" value="confirmar">
+</form>
+{% endblock %}
