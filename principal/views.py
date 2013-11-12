@@ -12,12 +12,12 @@ def sobre(request):
 
 def inicio(request):
     recetas = Receta.objects.all()
-    return render_to_response('inicio.html', {'listaRecetas': recetas})
+    return render_to_response('inicio.html', {'listaRecetas': recetas}, context_instance=RequestContext(request))
 
 def usuarios(request):
     usuarios = User.objects.all()
     recetas = Receta.objects.all()
-    return render_to_response('usuarios.html', {'listaUsuarios': usuarios, 'ListaRecetas': recetas})
+    return render_to_response('usuarios.html', {'listaUsuarios': usuarios, 'ListaRecetas': recetas}, context_instance=RequestContext(request))
 
 def lista_recetas(request):
     recetas = Receta.objects.all()

@@ -1,22 +1,48 @@
 <!DOCTYPE HTML>
-<html lang="es-CO">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Recetario para incolsoft {% block titulo %}{% endblock %}</title>
+
+    <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/main.css"> -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/LogoDPD.png">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <style type="text/css">
     {% block style_css %}{% endblock %}
     </style>
 </head>
 <body>
-    {% block encabezado %}{% endblock %}
-    <nav>
-        <ul>
+
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Prueba python guia MDW</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
             <li><a href="/">Inicio</a></li>
             <li><a href="/usuarios">Usuarios registrados</a></li>
             <li><a href="/recetas">Recetas</a></li>
             <li><a href="/comenta">Comenta</a></li>
             <li><a href="/sobre">Sobre</a></li>
             <li><a href="/contacto">Contactanos</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+    {% block encabezado %}{% endblock %}
+    <nav>
+        <ul>
+            
         </ul>
     </nav>
     <hr>
@@ -26,5 +52,7 @@
     <footer>
         <p>Ejemplo de plantillas Django 2013</p>
     </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
 </body>
 </html>
